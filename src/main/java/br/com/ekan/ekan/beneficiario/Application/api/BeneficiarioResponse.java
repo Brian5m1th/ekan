@@ -1,11 +1,11 @@
 package br.com.ekan.ekan.beneficiario.Application.api;
 
 import lombok.Builder;
-import lombok.Value;
+import lombok.Data;
 
 import java.util.UUID;
 
-@Value
+@Data
 @Builder
 public class BeneficiarioResponse {
     private UUID idBeneficiario;
