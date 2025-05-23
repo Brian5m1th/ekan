@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @Log4j2
 @RequiredArgsConstructor
@@ -15,5 +17,11 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
     @Override
     public void salva(Beneficiario beneficiario) {
         beneficiarioSpringDataJpaRepository.save(beneficiario);
+    }
+
+    @Override
+    public List<Beneficiario> findByAll() {
+        List<Beneficiario> beneficiarioList = beneficiarioSpringDataJpaRepository.findAll();
+        return beneficiarioList;
     }
 }
