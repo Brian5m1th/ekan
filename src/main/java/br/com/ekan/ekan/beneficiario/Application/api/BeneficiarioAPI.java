@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/v1/beneficiario")
@@ -18,4 +19,7 @@ public interface BeneficiarioAPI {
     @ResponseStatus(code = HttpStatus.OK)
     List<BeneficiarioListResponse> getBeneficiario();
 
+    @PatchMapping("/{idBeneficiario}")
+    @ResponseStatus(code = HttpStatus.OK)
+    void patchAlteraBeneficiario(@PathVariable UUID idBeneficiario, @Valid @RequestBody BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest);
 }

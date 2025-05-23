@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @Log4j2
@@ -29,5 +30,12 @@ public class BeneficiarioController implements BeneficiarioAPI {
         List<BeneficiarioListResponse> beneficiarios = beneficiarioService.buscarTodosBeneficiarios();
         log.info("[finish] BeneficiarioController - getBeneficiario");
         return beneficiarios;
+    }
+
+    @Override
+    public void patchAlteraBeneficiario(UUID idBeneficiario, BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest) {
+        log.info("[start] BeneficiarioController - patchAlteraBeneficiario");
+        log.info("[id] patchAlteraBeneficiario - idBeneficiario: {}", idBeneficiario);
+        log.info("[finish] BeneficiarioController - patchAlteraBeneficiario");
     }
 }
