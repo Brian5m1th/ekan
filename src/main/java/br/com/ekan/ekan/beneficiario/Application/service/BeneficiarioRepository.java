@@ -1,5 +1,6 @@
 package br.com.ekan.ekan.beneficiario.Application.service;
 
+import br.com.ekan.ekan.beneficiario.Application.api.BeneficiarioAlteracaoRequest;
 import br.com.ekan.ekan.beneficiario.domain.Beneficiario;
 
 import java.util.List;
@@ -12,5 +13,6 @@ public interface BeneficiarioRepository {
     List<Beneficiario> findByAll();
 
     Beneficiario findById(UUID idBeneficiario);
+
 }
 

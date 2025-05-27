@@ -1,5 +1,6 @@
 package br.com.ekan.ekan.beneficiario.domain;
 
+import br.com.ekan.ekan.beneficiario.Application.api.BeneficiarioAlteracaoRequest;
 import br.com.ekan.ekan.beneficiario.Application.api.BeneficiarioRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -34,5 +35,11 @@ public class Beneficiario {
         this.telefone = request.getTelefone();
         this.dataNascimento = request.getDataNascimento();
         this.dataInclusao = request.getDataInclusao();
+    }
+
+    public void altera(BeneficiarioAlteracaoRequest request) {
+        this.nomeBeneficiario = request.getNomeBeneficiario();
+        this.telefone = request.getTelefone();
+        this.dataNascimento = request.getDataNascimento();
     }
 }

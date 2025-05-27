@@ -17,6 +17,7 @@ import java.util.UUID;
 @Service
 public class BeneficiarioApplicationService implements BeneficiarioService {
     private final BeneficiarioRepository beneficiarioRepository;
+    private final BeneficiarioService beneficiarioService;
 
     @Override
     public BeneficiarioResponse criaBeneficiario(BeneficiarioRequest beneficiarioRequest) {
@@ -40,7 +41,9 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
     @Override
     public void patchAlteraBeneficiario(UUID idBeneficiario, BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest) {
         log.info("[start] BeneficiarioApplicationService - patchAlteraBeneficiario");
-        beneficiarioRepository.altera(idBeneficiario, beneficiarioAlteracaoRequest);
+        Beneficiario beneficiario =  beneficiarioService.buscarBeneficiarioPorId(idBeneficiario);
+        beneficiario.altera(beneficiarioAlteracaoRequest);
+        beneficiarioRepository.salva(beneficiario);
         log.info("[finish] BeneficiarioApplicationService - patchAlteraBeneficiario");
     }
 
