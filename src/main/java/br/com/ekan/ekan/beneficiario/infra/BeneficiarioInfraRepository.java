@@ -37,8 +37,9 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
     }
 
     @Override
-    public void delete(UUID idBeneficiario) {
+    public void delete(Beneficiario beneficiario) {
         log.info("[start] BeneficiarioApplicationService - delete");
+        beneficiarioSpringDataJpaRepository.delete(beneficiario);
         log.info("[finish] BeneficiarioApplicationService - delete");
     }
 }

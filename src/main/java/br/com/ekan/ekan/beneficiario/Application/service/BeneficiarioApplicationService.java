@@ -41,7 +41,7 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
     @Override
     public void patchAlteraBeneficiario(UUID idBeneficiario, BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest) {
         log.info("[start] BeneficiarioApplicationService - patchAlteraBeneficiario");
-        Beneficiario beneficiario =  beneficiarioService.buscarBeneficiarioPorId(idBeneficiario);
+        Beneficiario beneficiario = beneficiarioRepository.findById(idBeneficiario);
         beneficiario.altera(beneficiarioAlteracaoRequest);
         beneficiarioRepository.salva(beneficiario);
         log.info("[finish] BeneficiarioApplicationService - patchAlteraBeneficiario");
@@ -58,7 +58,8 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
     @Override
     public void deleta(UUID idBeneficiario) {
         log.info("[start] BeneficiarioApplicationService - deleta");
-        beneficiarioRepository.delete(idBeneficiario);
+        Beneficiario beneficiario =  beneficiarioRepository.findById(idBeneficiario);
+        beneficiarioRepository.delete(beneficiario);
         log.info("[finish] BeneficiarioApplicationService - deleta");
     }
 

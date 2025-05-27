@@ -14,6 +14,6 @@ public interface BeneficiarioRepository {
 
     Beneficiario findById(UUID idBeneficiario);
 
-    void delete(UUID idBeneficiario);
+    void delete(Beneficiario beneficiario);
 }
 
