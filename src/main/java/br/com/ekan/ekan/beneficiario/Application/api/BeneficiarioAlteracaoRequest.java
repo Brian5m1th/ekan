@@ -1,15 +1,19 @@
 package br.com.ekan.ekan.beneficiario.Application.api;
 
-import lombok.Builder;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 
 @Data
-@Builder
-public class BeneficiarioRequest {
+@Getter
+public class BeneficiarioAlteracaoRequest {
+    @NotBlank
     private String nomeBeneficiario;
+    @NotBlank
     private String telefone;
+    @NotNull
     private LocalDateTime dataNascimento;
-    private LocalDateTime dataInclusao;
 }
