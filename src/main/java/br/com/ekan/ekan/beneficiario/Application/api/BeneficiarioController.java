@@ -1,6 +1,8 @@
 package br.com.ekan.ekan.beneficiario.Application.api;
 
+import br.com.ekan.ekan.beneficiario.Application.service.BeneficiarioRepository;
 import br.com.ekan.ekan.beneficiario.Application.service.BeneficiarioService;
+import br.com.ekan.ekan.beneficiario.domain.Beneficiario;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -30,6 +32,14 @@ public class BeneficiarioController implements BeneficiarioAPI {
         List<BeneficiarioListResponse> beneficiarios = beneficiarioService.buscarTodosBeneficiarios();
         log.info("[finish] BeneficiarioController - getBeneficiario");
         return beneficiarios;
+    }
+
+    @Override
+    public BeneficiarioDetalhadoResponse getBeneficiarioPorId(UUID idBeneficiario) {
+        log.info("[start] BeneficiarioController - getBeneficiarioPorId");
+        Beneficiario beneficiarioPorId = beneficiarioService.buscarBeneficiarioPorId(idBeneficiario);
+        log.info("[finish] BeneficiarioController - getBeneficiarioPorId");
+        return new BeneficiarioDetalhadoResponse(beneficiarioPorId);
     }
 
     @Override

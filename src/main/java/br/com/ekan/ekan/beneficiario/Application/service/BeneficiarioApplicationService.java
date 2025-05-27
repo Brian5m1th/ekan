@@ -44,4 +44,10 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
         log.info("[finish] BeneficiarioApplicationService - patchAlteraBeneficiario");
     }
 
+    @Override
+    public Beneficiario buscarBeneficiarioPorId(UUID idBeneficiario) {
+
+        return null;
+    }
+
 }
