@@ -1,5 +1,6 @@
 package br.com.ekan.ekan.beneficiario.Application.api;
 
+
 import br.com.ekan.ekan.beneficiario.Application.service.BeneficiarioRepository;
 import br.com.ekan.ekan.beneficiario.Application.service.BeneficiarioService;
 import br.com.ekan.ekan.beneficiario.domain.Beneficiario;
@@ -54,5 +55,4 @@ public class BeneficiarioController implements BeneficiarioAPI {
         log.info("[start] BeneficiarioController - deletaBeneficiario");
         beneficiarioService.deleta(idBeneficiario);
         log.info("[finish] BeneficiarioController - deletaBeneficiario");
-    }
 }
