@@ -17,7 +17,6 @@ import java.util.UUID;
 @Service
 public class BeneficiarioApplicationService implements BeneficiarioService {
     private final BeneficiarioRepository beneficiarioRepository;
-    private final BeneficiarioService beneficiarioService;
 
     @Override
     public BeneficiarioResponse criaBeneficiario(BeneficiarioRequest beneficiarioRequest) {

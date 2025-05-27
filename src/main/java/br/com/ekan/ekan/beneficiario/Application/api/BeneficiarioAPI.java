@@ -27,7 +27,7 @@ public interface BeneficiarioAPI {
     @ResponseStatus(code = HttpStatus.OK)
     void patchAlteraBeneficiario(@PathVariable UUID idBeneficiario, @Valid @RequestBody BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest);
 
-    @DeleteMapping
+    @DeleteMapping("/{idBeneficiario}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deletaBeneficiario(@PathVariable @Valid UUID idBeneficiario);
 }
