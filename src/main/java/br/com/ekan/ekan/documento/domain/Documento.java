@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @ToString
 @Builder
@@ -15,7 +16,7 @@ public class Documento {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(columnDefinition = "UUID", name = "idDocumento", updatable = false, unique = true, nullable = false)
-    private String idDocumento;
+    private UUID idDocumento;
     private String nomeDocumento;
     private String descricao;
     private LocalDateTime dataInclusao;
