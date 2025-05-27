@@ -55,4 +55,10 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
         return beneficiarioPorId;
     }
 
+    @Override
+    public void deleta(UUID idBeneficiario) {
+        log.info("[start] BeneficiarioApplicationService - deleta");
+        log.info("[finish] BeneficiarioApplicationService - deleta");
+    }
+
 }

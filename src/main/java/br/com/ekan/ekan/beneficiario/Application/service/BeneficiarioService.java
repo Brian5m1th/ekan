@@ -18,4 +18,6 @@ public interface BeneficiarioService {
     void patchAlteraBeneficiario(UUID idBeneficiario, BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest);
 
     Beneficiario buscarBeneficiarioPorId(UUID idBeneficiario);
+
+    void deleta(UUID idBeneficiario);
 }
