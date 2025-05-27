@@ -20,6 +20,7 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
 
     @Override
     public void salva(Beneficiario beneficiario) {
+
         beneficiarioSpringDataJpaRepository.save(beneficiario);
     }
 

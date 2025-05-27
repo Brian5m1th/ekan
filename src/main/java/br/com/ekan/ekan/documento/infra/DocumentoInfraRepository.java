@@ -10,8 +10,11 @@ import org.springframework.stereotype.Repository;
 @Log4j2
 @RequiredArgsConstructor
 public class DocumentoInfraRepository implements DocumentoRepository {
+    private final DocumentoSpringDataJpaRepository documentoSpringDataJpaRepository;
+
     @Override
     public Documento salva(Documento documento) {
-        return null;
+        Documento Salva =  documentoSpringDataJpaRepository.save(documento);
+        return Salva;
     }
 }
