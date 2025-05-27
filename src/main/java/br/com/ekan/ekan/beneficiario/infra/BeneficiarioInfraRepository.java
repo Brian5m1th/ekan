@@ -35,4 +35,10 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
                 .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND,"Cliente não encontrado"  ));
         return beneficiario;
     }
+
+    @Override
+    public void delete(UUID idBeneficiario) {
+        log.info("[start] BeneficiarioApplicationService - delete");
+        log.info("[finish] BeneficiarioApplicationService - delete");
+    }
 }

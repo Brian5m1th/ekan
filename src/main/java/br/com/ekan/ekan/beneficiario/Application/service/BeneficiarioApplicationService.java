@@ -58,6 +58,7 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
     @Override
     public void deleta(UUID idBeneficiario) {
         log.info("[start] BeneficiarioApplicationService - deleta");
+        beneficiarioRepository.delete(idBeneficiario);
         log.info("[finish] BeneficiarioApplicationService - deleta");
     }
 
